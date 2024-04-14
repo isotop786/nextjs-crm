@@ -10,7 +10,8 @@ const PublicLayout = ({
   return (
     <html>
     <body>
-    <section className="bg-gray-50  dark:bg-gradient-to-l from-[#496989] to-[#58A399] ">
+    {/* <section className="bg-gray-50  dark:bg-gradient-to-l from-[#496989] to-[#58A399] "> */}
+    <section className="bg-gradient-to-l from-purple-500 to-green-500 ">
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         {children}
     </div>
