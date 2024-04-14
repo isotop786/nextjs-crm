@@ -1,6 +1,9 @@
 "use client"
 import React from 'react'
 import BarChart from '@/components/BarChart'
+import LineChart from '@/components/LineChart'
+import PieChart from '@/components/PieChart'
+import DoughNutChart from '@/components/DoughnutChart'
 
 const page = () => {
     
@@ -19,18 +22,38 @@ const page = () => {
         </div>
         <div className="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
             <p className="text-xl pb-3 flex items-center">
-                <i className="fas fa-check mr-3"></i> Resolved Reports
+                <i className="fas fa-check mr-3"></i> Quarterly Sale Report
             </p>
             <div className="p-6 bg-white">
-                <canvas id="chartTwo" width="400" height="200"></canvas>
+                <LineChart/>
+            </div>
+        </div>
+
+    </div>
+
+    <div className="flex flex-wrap mt-6">
+        <div className="w-1/2 lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0 ">
+            <p className="text-xl pb-3 flex items-center">
+                <i className="fas fa-check mr-3"></i> Product Sales
+            </p>
+            <div className="p-6 bg-white">
+                <PieChart/>
+            </div>
+        </div>
+        <div className="w-1/2 lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0 ">
+            <p className="text-xl pb-3 flex items-center">
+                <i className="fas fa-check mr-3"></i> Project Progress
+            </p>
+            <div className="p-6 bg-white">
+                <DoughNutChart/>
             </div>
         </div>
     </div>
 
     <div className="w-full mt-12">
         <p className="text-xl pb-3 flex items-center">
-            <i className="fas fa-list mr-3"></i> Latest Reports
-        </p>
+            <i className="fas fa-list mr-3"></i> Employees Report
+        </p> 
         <div className="bg-white overflow-auto">
             <table className="min-w-full bg-white">
                 <thead className="bg-gray-800 text-white">
