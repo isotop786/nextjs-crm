@@ -14,18 +14,22 @@ const LoginPage = () => {
     })
 
     const onLogin = async()=>{
-        try{
-            setLoading(true)
-            const res = await axios.post("/api/users/login",user);
-            router.push("/admin")
-        }
-        catch(error: any)
-        {
-            console.log("login failed: "+error.message)
-        }
-        finally{
-            setLoading(false)
-        }
+       if(user.email ==="" || user.password===""){
+        alert("Email/Password can not be empty")
+       }else{
+            try{
+                setLoading(true)
+                const res = await axios.post("/api/users/login",user);
+                router.push("/admin")
+            }
+            catch(error: any)
+            {
+                console.log("login failed: "+error.message)
+            }
+            finally{
+                setLoading(false)
+            }
+       }
     }
 
   return (
