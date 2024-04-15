@@ -28,7 +28,7 @@ const TopHeader = () => {
         </button>
         
         {isOpen && (
-            <div x-show="isOpen" className="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
+        <div x-show="isOpen" className="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16" style={{zIndex:999}}>
             <Link href="#" className="block px-4 py-2 account-link hover:text-white">Account</Link>
             <Link href="#" className="block px-4 py-2 account-link hover:text-white">Settings</Link>
             <Link onClick={logout} href="#" className="block px-4 py-2 account-link hover:text-white">Sign Out</Link>
