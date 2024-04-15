@@ -9,6 +9,8 @@ import { FaProjectDiagram } from "react-icons/fa";
 import { IoMdPeople } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdPointOfSale } from "react-icons/md";
+import { IoCloudUpload } from "react-icons/io5";
+
 
 
 
@@ -40,17 +42,23 @@ const Sidebar = () => {
                 <span>Sales</span>
             </Link>
 
-            <Link href="/admin/projects" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/projects' && 'active-nav-link'} `} >
-                <FaProjectDiagram className='md:mr-1'/>
-                <span>Projects</span>
-            </Link>
             <Link href="/admin/employees" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/employees' && 'active-nav-link'} `} >
                 <IoMdPeople size={20} className='md:mr-1' />
                 <span>Employees</span>
             </Link>
+
+            <Link href="/admin/projects" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/projects' && 'active-nav-link'} `} >
+                <FaProjectDiagram className='md:mr-1'/>
+                <span>Projects</span>
+            </Link>
+            
             <Link href="/admin/calendar" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/calendar' && 'active-nav-link'} `}>
                 <FaCalendarAlt className='md:mr-1'/>
                 <span>Calendar</span>
+            </Link>
+            <Link href="/admin/uploads" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/uploads' && 'active-nav-link'} `}>
+                <IoCloudUpload className='md:mr-1'/>
+                <span>File Upload</span>
             </Link>
         </nav>
     </aside>

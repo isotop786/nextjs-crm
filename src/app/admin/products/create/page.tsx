@@ -1,5 +1,5 @@
 "use client"
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect,ChangeEvent ,ChangeEventHandler} from 'react'
 import { Product } from '../page'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
@@ -32,6 +32,16 @@ const CreateProduct = () => {
   const err = [];
 
   const [loading, setLoading] = useState(false)
+  const [productImage, setProductImage] = useState<File>();
+
+  const handleImageChange = (e :ChangeEvent<HTMLInputElement>) => {
+    // console.log(e.target.files[0]!)
+    // if (e.target.files && e.target.files[0]) {
+    //   setProductImage(e.target.files[0]);
+    // }
+    setProductImage(e.target.files?.[0])
+    console.log(productImage)
+  };
   
   const validateForm = () => {
     const myErrors : Error = {
@@ -73,11 +83,23 @@ const CreateProduct = () => {
 
 
   async function onSubmit(){
-      validateForm()
+      // validateForm()
+      const {title, description, price} = product;
+
+      const data = {
+        title, 
+        description, 
+        price,
+        productImage
+      }
+
+      console.log(data.productImage)
+
       if(err.length === 0){
         try{
           setLoading(true)
-          const res = await axios.post("/api/products",product)
+          // const res = await axios.post("/api/products",product)
+          const res = await axios.post("/api/products",data)
           router.push("/admin/products")
         }        
         catch(err){
@@ -114,6 +136,16 @@ const CreateProduct = () => {
       type="text" id="base-input" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
       {errors.price && (<p className="mt-2 text-sm text-red-600 dark:text-red-500">Price can not be empty</p>)}
   </div>
+  <div>
+      <input type="file" name="file"  onChange={async (e)=>{
+        // setProductImage(e.target.files?.[0])
+        console.log(e.target.files?.[0])
+        setProductImage(e.target.files?.[0])
+        console.log(productImage)
+        
+      }} />
+      
+    </div>
   <div className="mb-5">
       <label htmlFor="base-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Image URL</label>
       <input
