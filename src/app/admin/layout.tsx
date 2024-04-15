@@ -85,7 +85,7 @@ export default function RootLayout({
                 {children}
             </main>
     
-            <footer className="w-full bg-white text-right p-4">
+            <footer className="w-full bg-white text-right p-4 mt-10">
                 Built by <a target="_blank" href="#" className="underline">Maruf</a>.
             </footer>
         </div>

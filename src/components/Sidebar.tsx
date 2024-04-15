@@ -29,14 +29,17 @@ const Sidebar = () => {
                 <GrProjects className='md:mr-1'/>
                 <span>Dashboard</span>
             </Link>
-            <Link href="/admin/sales" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/sales' && 'active-nav-link'} `}>
-                <MdPointOfSale className='mr-1' />
-                <span>Sales</span>
-            </Link>
+           
             <Link href="/admin/products" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/products' && 'active-nav-link'} `} >
                 <MdOutlineInventory2 className='md:mr-1'/>
                 <span>Products</span>
             </Link>
+            
+            <Link href="/admin/sales" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/sales' && 'active-nav-link'} `}>
+                <MdPointOfSale className='mr-1' />
+                <span>Sales</span>
+            </Link>
+
             <Link href="/admin/projects" className={`flex items-center  text-white py-4 pl-6 nav-item ${pathName=='/admin/projects' && 'active-nav-link'} `} >
                 <FaProjectDiagram className='md:mr-1'/>
                 <span>Projects</span>
