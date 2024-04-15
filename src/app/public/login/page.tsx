@@ -9,8 +9,8 @@ const LoginPage = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false)
     const [user, setUser] = useState({
-        email:"",
-        password:""
+        email:"maruf@gmail.com",
+        password:"pass123"
     })
 
     const onLogin = async()=>{
