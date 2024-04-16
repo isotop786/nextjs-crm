@@ -2,9 +2,20 @@ import { writeFile } from "fs/promises";
 import { NextRequest, NextResponse } from "next/server";
 import {dirname, join} from 'path'
 
+
 export async function POST(request: NextRequest, response: NextResponse){
 
+    // await NextCors(req, res, {
+    //     // Options
+    //     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    //     origin: '*',
+    //     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    //  });
+    
+
     try{
+      
+        
 
         const data = await request.formData();
 
