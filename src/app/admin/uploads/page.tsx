@@ -16,6 +16,9 @@ const UploadPage = () => {
             data.set('file',file)
 
             const res = await fetch('/api/upload',{
+                headers:{
+                    'Content-Type':'multipart/formdata'
+                },
                 method: 'POST',
                 body: data
             })
