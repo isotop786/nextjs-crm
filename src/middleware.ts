@@ -32,6 +32,7 @@ export const config = {
       '/admin/projects',
       '/admin/sales',
       '/admin/products',
+      'admin/uploads',
       '/profile',
       '/posts',
       '/posts/create',
